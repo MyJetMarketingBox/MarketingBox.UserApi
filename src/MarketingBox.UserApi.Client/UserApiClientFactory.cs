@@ -4,9 +4,9 @@ using MyJetWallet.Sdk.Grpc;
 namespace MarketingBox.UserApi.Client
 {
     [UsedImplicitly]
-    public class AuthApiClientFactory: MyGrpcClientFactory
+    public class UserApiClientFactory: MyGrpcClientFactory
     {
-        public AuthApiClientFactory(string grpcServiceUrl) : base(grpcServiceUrl)
+        public UserApiClientFactory(string grpcServiceUrl) : base(grpcServiceUrl)
         {
         }
     }

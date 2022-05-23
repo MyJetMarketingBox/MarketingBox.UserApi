@@ -52,7 +52,11 @@ namespace MarketingBox.UserApi
 
             services.AddAuthorization();
             services.AddControllers();
-            services.SetupSwaggerDocumentation();
+            services.AddSwaggerDocument(o =>
+            {
+                o.Title = "User API";
+                o.GenerateEnumMappingDescription = true;
+            });
 
             services.AddHostedService<ApplicationLifetimeManager>();
 
