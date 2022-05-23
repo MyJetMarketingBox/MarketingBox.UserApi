@@ -20,7 +20,7 @@ namespace MarketingBox.UserApi.Controllers
         /// </summary>
         /// <remarks>
         /// </remarks>
-        [HttpPost("{userId}/resetPassword")]
+        [HttpPost("resetPassword")]
 
         public async Task<IActionResult> LoginAsync(
             [FromBody] ResetPasswordRequestHttp request)
