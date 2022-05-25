@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
@@ -52,11 +53,7 @@ namespace MarketingBox.UserApi
 
             services.AddAuthorization();
             services.AddControllers();
-            services.AddSwaggerDocument(o =>
-            {
-                o.Title = "User API";
-                o.GenerateEnumMappingDescription = true;
-            });
+            services.SetupSwaggerDocumentation();
 
             services.AddHostedService<ApplicationLifetimeManager>();
 
@@ -65,6 +62,7 @@ namespace MarketingBox.UserApi
                 .AddJwtBearer(ConfigureJwtBearerOptions);
 
             services.AddMyTelemetry("MB-", Program.Settings.ZipkinUrl);
+            services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
         }
 
         protected virtual void ConfigureJwtBearerOptions(JwtBearerOptions options)
@@ -100,6 +98,7 @@ namespace MarketingBox.UserApi
             app.UseCors(_allowAllOrigins);
 
             app.UseAuthentication();
+            
             app.UseAuthorization();
 
             app.UseApiResponseAndExceptionWrapper<ApiResponseMap>(

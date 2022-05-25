@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
+using NSwag;
 
 namespace MarketingBox.UserApi
 {
@@ -8,17 +10,17 @@ namespace MarketingBox.UserApi
         {
             services.AddSwaggerDocument(o =>
             {
-                o.Title = "Auth API";
+                o.Title = "User API";
                 o.GenerateEnumMappingDescription = true;
 
-                //o.AddSecurity("Bearer", Enumerable.Empty<string>(),
-                //    new OpenApiSecurityScheme
-                //    {
-                //        Type = OpenApiSecuritySchemeType.ApiKey,
-                //        Description = "Bearer Token",
-                //        In = OpenApiSecurityApiKeyLocation.Header,
-                //        Name = "Authorization"
-                //    });
+                o.AddSecurity("Bearer", Enumerable.Empty<string>(),
+                    new OpenApiSecurityScheme
+                    {
+                        Type = OpenApiSecuritySchemeType.ApiKey,
+                        Description = "Bearer Token",
+                        In = OpenApiSecurityApiKeyLocation.Header,
+                        Name = "Authorization"
+                    });
             });
         }
     }

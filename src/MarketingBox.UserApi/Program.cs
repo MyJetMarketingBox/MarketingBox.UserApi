@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using Autofac.Extensions.DependencyInjection;
-using MarketingBox.AuthApi;
 using MarketingBox.UserApi.Settings;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
@@ -15,7 +14,7 @@ namespace MarketingBox.UserApi
 {
     public class Program
     {
-        public const string SettingsFileName = ".marketingboxauthapi";
+        public const string SettingsFileName = ".marketingboxuserapi";
 
         public static SettingsModel Settings { get; private set; }
 

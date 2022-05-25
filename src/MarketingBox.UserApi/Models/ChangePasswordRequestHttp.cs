@@ -4,12 +4,10 @@ using MarketingBox.Sdk.Common.Models;
 
 namespace MarketingBox.UserApi.Models
 {
-    public class ResetPasswordRequestHttp : ValidatableEntity
+    public class ChangePasswordRequestHttp : ValidatableEntity
     {
         [Required, IsValidPassword, StringLength(128, MinimumLength = 1)]
         public string NewPassword { get; set; }
-
-        [Required]
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
     }
 }

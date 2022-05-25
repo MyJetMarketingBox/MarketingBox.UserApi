@@ -5,28 +5,25 @@ namespace MarketingBox.UserApi.Settings
 {
     public class SettingsModel
     {
-        [YamlProperty("MarketingBoxAuthApi.SeqServiceUrl")]
+        [YamlProperty("MarketingBoxUserApi.SeqServiceUrl")]
         public string SeqServiceUrl { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.ZipkinUrl")]
+        [YamlProperty("MarketingBoxUserApi.ZipkinUrl")]
         public string ZipkinUrl { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.ElkLogs")]
+        [YamlProperty("MarketingBoxUserApi.ElkLogs")]
         public LogElkSettings ElkLogs { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.AuthServiceUrl")]
+        [YamlProperty("MarketingBoxUserApi.AuthServiceUrl")]
         public string AuthServiceUrl { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.JwtAudience")]
+        [YamlProperty("MarketingBoxUserApi.JwtAudience")]
         public string JwtAudience { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.JwtSecret")]
+        [YamlProperty("MarketingBoxUserApi.JwtSecret")]
         public string JwtSecret { get; set; }
 
-        [YamlProperty("MarketingBoxAuthApi.JwtTtl")]
+        [YamlProperty("MarketingBoxUserApi.JwtTtl")]
         public string JwtTtl { get; set; }
-
-        [YamlProperty("MarketingBoxAuthApi.MyNoSqlReaderHostPort")]
-        public string MyNoSqlReaderHostPort { get; set; }
     }
 }

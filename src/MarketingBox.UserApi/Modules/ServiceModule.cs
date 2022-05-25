@@ -1,7 +1,5 @@
 ﻿using Autofac;
 using MarketingBox.Auth.Service.Client;
-using Microsoft.Extensions.Logging;
-using MyJetWallet.Sdk.NoSql;
 
 namespace MarketingBox.UserApi.Modules
 {
@@ -10,9 +8,6 @@ namespace MarketingBox.UserApi.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterAuthServiceClient(Program.Settings.AuthServiceUrl);
-            var noSqlClient = builder.CreateNoSqlClient(
-                Program.ReloadedSettings(e => e.MyNoSqlReaderHostPort).Invoke(),
-                new LoggerFactory());
         }
     }
 }
