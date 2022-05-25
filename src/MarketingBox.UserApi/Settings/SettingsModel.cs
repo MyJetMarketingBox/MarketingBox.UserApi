@@ -22,8 +22,5 @@ namespace MarketingBox.UserApi.Settings
 
         [YamlProperty("MarketingBoxUserApi.JwtSecret")]
         public string JwtSecret { get; set; }
-
-        [YamlProperty("MarketingBoxUserApi.JwtTtl")]
-        public string JwtTtl { get; set; }
     }
 }
