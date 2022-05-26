@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace MarketingBox.AuthApi.Controllers
+namespace MarketingBox.UserApi.Controllers
 {
     [ApiController]
     [Route("api/isalive")]
