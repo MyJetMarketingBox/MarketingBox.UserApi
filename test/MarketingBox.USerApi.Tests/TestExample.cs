@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace MarketingBox.AuthApi.Tests
+namespace MarketingBox.UserApi.Tests
 {
     public class TestExample
     {
