@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Text;
 using Autofac;
 using AutoWrapper;
+using MarketingBox.Sdk.Common.Extensions;
 using MarketingBox.Sdk.Common.Models.RestApi;
 using MarketingBox.UserApi.Modules;
 using Microsoft.AspNetCore.Authentication;
@@ -108,6 +109,7 @@ namespace MarketingBox.UserApi
                     IgnoreWrapForOkRequests = true
                 });
 
+            app.UseExceptions();
 
             app.UseMetricServer();
 
